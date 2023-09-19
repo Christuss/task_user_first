@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -47,5 +48,16 @@ class TaskController extends Controller
     public function listView() {
         $task = Task::all();
         return view('task.list', ['tasks' => $task]);
+    }
+
+    public function newView() {
+        $users = User::all();
+        return view('task.new', ['users' => $users]);
+    }
+
+    public function editView($id) {
+        $users = User::all();
+        $task = Task::find($id);
+        return view('task.edit', ['users' => $users, 'task' => $task]);
     }
 }
