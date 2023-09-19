@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/api/tasks', [TaskController::class, 'store']);
+Route::put('/api/tasks/{id}', [TaskController::class, 'update']);
+
 Route::get('/api/task', [TaskController::class, 'index']);
 Route::get('/api/task/{id}', [TaskController::class, 'show']);
 Route::get('/task/list', [TaskController::class, 'listView']);

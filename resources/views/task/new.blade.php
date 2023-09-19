@@ -1,5 +1,6 @@
 
 <form action="/api/tasks" method="post">
+    {{csrf_field()}}
     <input type="text" name="title" placeholder="Title">
     <input type="text" name="description" placeholder="Description"> 
     <select name="user_id" placeholder="User Id">

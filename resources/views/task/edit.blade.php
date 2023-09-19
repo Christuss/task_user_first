@@ -1,4 +1,5 @@
 <form action="/api/tasks/{{$task->id}}" method="post">
+{{csrf_field()}}
 {{method_field('PUT')}}
 <input type="text" name="title" placeholder="Title">
 <input type="text" name="description" placeholder="Description"> 
