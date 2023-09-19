@@ -19,5 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/task', [TaskController::class, 'index']);
+Route::get('/api/task/{id}', [TaskController::class, 'show']);
+Route::get('/task/list', [TaskController::class, 'listView']);
 
 //require __DIR__ . '/auth.php';
